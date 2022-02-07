@@ -76,3 +76,20 @@ def check_numbers(numbers):
         return "The JSON POST data should have format {\"n1\":<number>, \"n2\":<number>}"
 
     return None
+
+def format_result(result):
+    """
+    - Formats the result 
+    - Turn it into JSON format
+    """
+    # Turns result into a response object, with JSON data
+    result = json.jsonify(result)    
+    
+    # Add CORS headers to response
+    result.headers.add('Access-Control-Allow-Headers', 'content-type')
+    result.headers.add('Access-Control-Allow-Origin', '*')
+
+    return result
+
+if __name__ == '__main__':
+    app.run(debug=True)
