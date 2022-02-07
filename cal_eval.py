@@ -14,7 +14,7 @@ def cal():
 
     #Check if the json request has the key expression
     if "expression" not in exp_json:
-        return format_result("result": "You have to post an expression to use this API")
+        return format_result({"result": "You have to post an expression to use this API"})
 
     #Get the expression string from the dict 
     exp = exp_json['expression']
@@ -46,7 +46,7 @@ def format_result(result):
 
     # Turns result into a response object, with JSON data
     result = json.jsonify(result)    
-    
+
     # Add CORS headers to response
     result.headers.add('Access-Control-Allow-Headers', 'content-type')
     result.headers.add('Access-Control-Allow-Origin', '*')
