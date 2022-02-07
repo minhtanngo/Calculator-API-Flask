@@ -31,3 +31,33 @@ def substraction():
         result = {"result": check}
     
     return format_result(result)
+
+#Divide two numbers 
+
+@app.route('/div', methods=['POST','OPTIONS'])
+def division():
+    numbers = request.get_json(silent=True)
+    
+    check = check_numbers(numbers)
+    if check == None:
+        result = {"result": numbers['n1'] / numbers['n2']}
+    else:
+        result = {"result": check}
+    
+    return format_result(result)
+
+# Multiplies two numbers
+
+@app.route('/mult', methods=['POST', 'OPTIONS'])
+def multiplication():
+    numbers = request.get_json(silent=True)
+    
+    check = check_numbers(numbers)
+
+    if check == None:
+        result = {"result": numbers['n1'] * numbers['n2']}
+    else:
+        result = {"result": check}
+    
+    return format_result(result)
+
