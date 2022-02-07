@@ -14,3 +14,10 @@ To run this project, an environment with [Python 3.7](https://wiki.python.org/mo
 ```
 git clone https://github.com/minhtanngo/Calculator-API-Flask.git
 ``` 
+
+Access the project directory 
+``` 
+cd Calculator-API-Flask
+``` 
+
+Inside the project directory, execute the following: 
