@@ -61,3 +61,18 @@ def multiplication():
     
     return format_result(result)
 
+
+def check_numbers(numbers):
+    """
+    - Numbers should be a dictionary (JSON), Length = 2, keys 'n1' and 'n2'.
+    - Returns None if all conditions are met, otherwise returns an error message.
+    """
+    
+    if numbers == None:
+        return "Please POST two numbers to use this API with format {\"n1\":<number>, \"n2\":<number>}"
+    if len(numbers) != 2:
+        return "Only 2 numbers are allowed"
+    if 'n1' not in numbers or 'n2' not in numbers:
+        return "The JSON POST data should have format {\"n1\":<number>, \"n2\":<number>}"
+
+    return None
